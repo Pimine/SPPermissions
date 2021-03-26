@@ -168,11 +168,11 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
      
      - parameter controller: Controller, on which need present `SPPermissions` controller.
      */
-    public func present(on controller: UIViewController) {
+    public func present(on controller: UIViewController, animated: Bool) {
         let navController = UINavigationController(rootViewController: self)
         navController.modalPresentationStyle = .formSheet
         navController.preferredContentSize = CGSize.init(width: 480, height: 560)
-        controller.present(navController, animated: true, completion: nil)
+        controller.present(navController, animated: animated, completion: nil)
     }
     
     public func dismiss() {

@@ -34,5 +34,5 @@ protocol SPPermissionsControllerProtocol {
     /**
      Run request permission now.
      */
-    func present(on controller: UIViewController)
+    func present(on controller: UIViewController, animated: Bool)
 }

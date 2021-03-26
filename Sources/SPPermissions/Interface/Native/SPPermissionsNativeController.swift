@@ -42,7 +42,7 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerPro
      - parameter controller: Controller, on which need present `SPPermissions` controller. Using for alert.
      - warning: `didHide` delegate method not call here.
      */
-    public func present(on controller: UIViewController) {
+    public func present(on controller: UIViewController, animated: Bool) {
         let delegate = self.delegate
         for permission in permissions {
             permission.request {
@@ -77,7 +77,7 @@ public class SPPermissionsNativeController: NSObject, SPPermissionsControllerPro
                             handler: { (action) in
                                 SPPermissionsOpener.openSettings()
                         }))
-                        controller.present(alertController, animated: true, completion: nil)
+                        controller.present(alertController, animated: animated, completion: nil)
                     }
                 }
             }
